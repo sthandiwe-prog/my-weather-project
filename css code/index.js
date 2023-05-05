@@ -1,4 +1,3 @@
-//1
 let now = new Date();
 
 let days = [
@@ -22,12 +21,7 @@ if (minutes < 10) {
 let time = document.querySelector("#time");
 time.innerHTML = `${day} ${hour}:${minutes}`;
 
-//dont forget to fix minutes
-
-//2
-
-//3
-/*function convertToFahrenheit(event) {
+function convertToFahrenheit(event) {
   event.preventDefault();
   let tempInCelsius = document.querySelector("#tempInCelsius");
   tempInCelsius.innerHTML = 66;
@@ -43,9 +37,7 @@ function convertToCelsuis(event) {
 }
 
 let celsiusDegrees = document.querySelector(".celsius");
-celsiusDegrees.addEventListener("click", convertToCelsuis);*/
-
-//4
+celsiusDegrees.addEventListener("click", convertToCelsuis);
 
 function searchDefault(city) {
   let units = "metric";
