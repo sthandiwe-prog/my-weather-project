@@ -1,0 +1,86 @@
+small {
+  font-size: 11px;
+  line-height: 45px;
+  margin-top: 10px;
+  vertical-align: top;
+}
+a {
+  text-decoration: none;
+}
+strong {
+  font-size: 33px;
+}
+
+.weather-icon {
+  max-width: 50%;
+}
+
+.content {
+  border: none;
+  border-radius: 6px;
+  padding: 0 0 50px 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 20px auto;
+  max-width: 600px;
+  background: rgb(245, 245, 245);
+}
+.search-bar {
+  padding: 10px 140px 10px 10px;
+  margin: 50px 30px 30px 0;
+  border-radius: 5px;
+  border: none;
+}
+.button {
+  padding: 10px;
+  margin: 50px 30px 30px 0;
+  background-color: rgb(190, 190, 190);
+  border: none;
+  border-radius: 5px;
+  color: rgb(88, 88, 88);
+}
+.button:hover {
+  background-color: cadetblue;
+  color: white;
+}
+
+.days {
+  padding-bottom: 120px;
+}
+.conditions {
+  margin: 10px 0 60px 0;
+}
+.sunny {
+  font-size: 30px;
+  margin: 10px 0 10px 0;
+  color: rgb(242, 203, 0);
+}
+.code-source {
+  margin: 0 0 0 260px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.city {
+  font-size: 25px;
+  font-weight: bold;
+}
+.actual-temp {
+  font-size: 30px;
+}
+
+.btn-group {
+  margin-right: 30px;
+}
+
+.button-group1,
+.button-group2,
+.button-group3 {
+  font-size: 10px;
+  background-color: rgb(217, 217, 217);
+  border-color: rgb(217, 217, 217);
+  color: rgb(61, 61, 61);
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: blue;
+}
