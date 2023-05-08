@@ -21,24 +21,6 @@ if (minutes < 10) {
 let time = document.querySelector("#time");
 time.innerHTML = `${day} ${hour}:${minutes}`;
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let tempInCelsius = document.querySelector("#tempInCelsius");
-  tempInCelsius.innerHTML = 66;
-}
-
-let fahreinheitDegrees = document.querySelector(".fahrenheit");
-fahreinheitDegrees.addEventListener("click", convertToFahrenheit);
-
-function convertToCelsuis(event) {
-  event.preventDefault();
-  let tempInCelsius = document.querySelector("#tempInCelsius");
-  tempInCelsius.innerHTML = 24;
-}
-
-let celsiusDegrees = document.querySelector(".celsius");
-celsiusDegrees.addEventListener("click", convertToCelsuis);
-
 function searchDefault(city) {
   let units = "metric";
   let apiKey = `b98755d1364b40ce6f0dab6b8d71729b`;
@@ -52,8 +34,27 @@ function searchCity(event) {
   searchDefault(city);
 }
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let tempInCelsius = document.querySelector("#tempInCelsius");
+  tempInCelsius.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
+
+let fahreinheitDegrees = document.querySelector(".fahrenheit");
+fahreinheitDegrees.addEventListener("click", convertToFahrenheit);
+
+function convertToCelsuis(event) {
+  event.preventDefault();
+  let tempInCelsius = document.querySelector("#tempInCelsius");
+  tempInCelsius.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusDegrees = document.querySelector(".celsius");
+celsiusDegrees.addEventListener("click", convertToCelsuis);
+
 function showTemperature(response) {
   console.log(response.data);
+
   let condition = document.querySelector("#condition");
   condition.innerHTML = response.data.weather[0].main;
 
@@ -66,7 +67,9 @@ function showTemperature(response) {
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
 
-  let temp = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  let temp = Math.round(celsiusTemperature);
   let actualTemp = document.querySelector("#tempInCelsius");
   actualTemp.innerHTML = `${temp}`;
 
@@ -86,8 +89,9 @@ searchDefault("Durban");
 
 function handlePosition(position) {
   console.log(position);
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
+  let lat = position.coords.latitude;
+  let long = position.coords.longitude;
+  console.log(`Your latitude is ${lat} and longitude is ${long}`);
 }
 navigator.geolocation.getCurrentPosition(handlePosition);
 
@@ -95,3 +99,5 @@ function toggleLocation() {
   let location = document.querySelector("#current-location");
   location.addEventListener("submit", handlePosition);
 }
+
+let celsiusTemperature = null;

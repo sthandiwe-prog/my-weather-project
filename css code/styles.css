@@ -56,10 +56,6 @@ strong {
   margin: 10px 0 10px 0;
   color: rgb(242, 203, 0);
 }
-.code-source {
-  margin: 0 0 0 260px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-}
 
 .city {
   font-size: 25px;
@@ -84,4 +80,7 @@ strong {
 .link:hover {
   text-decoration: underline;
   color: rgb(0, 0, 214);
+}
+.celsius {
+  color: black;
 }
