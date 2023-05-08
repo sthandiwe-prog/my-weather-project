@@ -83,3 +83,15 @@ let searchButton = document.querySelector("#search-form");
 searchButton.addEventListener("submit", searchCity);
 
 searchDefault("Durban");
+
+function handlePosition(position) {
+  console.log(position);
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
+}
+navigator.geolocation.getCurrentPosition(handlePosition);
+
+function toggleLocation() {
+  let location = document.querySelector("#current-location");
+  location.addEventListener("submit", handlePosition);
+}
