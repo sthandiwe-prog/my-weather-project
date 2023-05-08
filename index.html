@@ -19,107 +19,115 @@
   </head>
   <body>
     <div class="container">
-      <div class="content">
-        <form id="search-form">
-          <input
-            type="search"
-            placeholder="Search City..."
-            class="search-bar"
-            id="search-space"
-          />
-          <input
-            type="submit"
-            value="Search"
-            id="search-button"
-            class="button"
-          />
-        </form>
+      <div class="document-wrapper">
+        <div class="content">
+          <form id="search-form">
+            <input
+              type="search"
+              placeholder="Search City..."
+              class="search-bar"
+              id="search-space"
+              autocomplete="off"
+            />
+            <input
+              type="submit"
+              value="Search"
+              id="search-button"
+              class="button"
+            />
+          </form>
 
-        <div class="col-6">
-          <p class="city">
-            <span id="city-name">Durban</span>:
+          <div class="col-6">
+            <p class="city">
+              <span id="city-name">Durban</span>:
 
-            <span>
-              <strong id="tempInCelsius"> 24 </strong>
-              <small>
-                <a href="#" class="celsius">°C</a>|<a
-                  href="#"
-                  class="fahrenheit"
-                  >°F</a
-                >
-              </small>
-            </span>
+              <span>
+                <strong id="tempInCelsius"> 24 </strong>
+                <small>
+                  <a href="#" class="celsius">°C</a>|<a
+                    href="#"
+                    class="fahrenheit"
+                    >°F</a
+                  >
+                </small>
+              </span>
+              <br />
+              <img
+                src="image(s)/sun.png"
+                alt="weather icon"
+                class="weather-icon"
+                id="icon"
+              />
+            </p>
+          </div>
+
+          <div class="col-6">
+            Weather <br />
+            <span id="time">Sunday 14:00</span><br />
+            <span id="condition">Mostly sunny </span><br />
             <br />
-            <img src="image(s)/sun.png" alt="sun" class="weather-icon" />
-          </p>
-        </div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-primary button-group1">
+                Temperature
+              </button>
+              <button type="button" class="btn btn-primary button-group2">
+                Precipitation
+              </button>
+              <button type="button" class="btn btn-primary button-group3">
+                Wind
+              </button>
+            </div>
+          </div>
 
-        <div class="col-6">
-          Weather <br />
-          <span id="time">Sunday 14:00</span><br />
-          <span id="condition">Mostly sunny </span><br />
-          <br />
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary button-group1">
-              Temperature
-            </button>
-            <button type="button" class="btn btn-primary button-group2">
-              Precipitation
-            </button>
-            <button type="button" class="btn btn-primary button-group3">
-              Wind
-            </button>
+          <div class="conditions">
+            <div>Precipitation: <span id="recipitation">5</span> %</div>
+            <div>Humidity: <span id="humidity">38</span> %</div>
+            <div>Wind: <span id="wind">5</span> km/h</div>
           </div>
-        </div>
 
-        <div class="conditions">
-          <div>Precipitation: <span id="recipitation">5</span> %</div>
-          <div>Humidity: <span id="humidity">38</span> %</div>
-          <div>Wind: <span id="wind">5</span> km/h</div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            Mon <br />
-            <img src="image(s)/Mon.png" alt="Cloudy weather" /> <br />
-            27°C
-          </div>
-          <div class="col">
-            Tue <br />
-            <img src="image(s)/Thur.png" alt="Sunny weather" /> <br />
-            28°C
-          </div>
-          <div class="col">
-            Wed <br />
-            <img src="image(s)/Wed.png" alt="Sunny cloudy weather" /> <br />
-            25°C
-          </div>
-          <div class="col">
-            Thur <br />
-            <img src="image(s)/Thur.png" alt="Sunny weather" /> <br />
-            29°C
-          </div>
-          <div class="col">
-            Fri <br />
-            <img src="image(s)/Fri.png" alt="Cloudy rainy weather" /> <br />
-            26°C
-          </div>
-          <div class="col">
-            Sat <br />
-            <img src="image(s)/Thur.png" alt="Sunny weather" /> <br />
-            30°C
+          <div class="row">
+            <div class="col">
+              Mon <br />
+              <img src="image(s)/Mon.png" alt="Cloudy weather" /> <br />
+              27°C
+            </div>
+            <div class="col">
+              Tue <br />
+              <img src="image(s)/Thur.png" alt="Sunny weather" /> <br />
+              28°C
+            </div>
+            <div class="col">
+              Wed <br />
+              <img src="image(s)/Wed.png" alt="Sunny cloudy weather" /> <br />
+              25°C
+            </div>
+            <div class="col">
+              Thur <br />
+              <img src="image(s)/Thur.png" alt="Sunny weather" /> <br />
+              29°C
+            </div>
+            <div class="col">
+              Fri <br />
+              <img src="image(s)/Fri.png" alt="Cloudy rainy weather" /> <br />
+              26°C
+            </div>
+            <div class="col">
+              Sat <br />
+              <img src="image(s)/Thur.png" alt="Sunny weather" /> <br />
+              30°C
+            </div>
           </div>
         </div>
-      </div>
-      <small class="code-source">
-        <a
-          href="https://github.com/sthandiwe-prog/my-weather-project"
-          target="_blank"
-          class="link"
-          >Open-source code</a
+        <small class="code-source">
+          <a
+            href="https://github.com/sthandiwe-prog/my-weather-project"
+            target="_blank"
+            class="link"
+            >Open-source code</a
+          >
+          , by Sthandiwe Gasa</small
         >
-        , by Sthandiwe Gasa</small
-      >
+      </div>
     </div>
 
     <script src="css code/index.js"></script>
