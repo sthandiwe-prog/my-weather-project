@@ -52,7 +52,9 @@ function convertToCelsuis(event) {
 let celsiusDegrees = document.querySelector(".celsius");
 celsiusDegrees.addEventListener("click", convertToCelsuis);
 
-function displayForecast() {
+function displayForecast(response) {
+  //console.log(response.data);
+
   let forecastWeather = document.querySelector("#forecast");
 
   let htmlForecast = `<div class="row">`;
@@ -74,11 +76,9 @@ function displayForecast() {
 }
 
 function getForecast(coordinates) {
-  //console.log(coordinates.lon);
-  //console.log(coordinates.lat);
-  let apiKey = `b98755d1364b40ce6f0dab6b8d71729b`;
-  let oneCallUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(oneCallUrl).then(displayForecast);
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=b98755d1364b40ce6f0dab6b8d71729b`;
+  //console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemperature(response) {
