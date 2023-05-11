@@ -52,6 +52,35 @@ function convertToCelsuis(event) {
 let celsiusDegrees = document.querySelector(".celsius");
 celsiusDegrees.addEventListener("click", convertToCelsuis);
 
+function displayForecast() {
+  let forecastWeather = document.querySelector("#forecast");
+
+  let htmlForecast = `<div class="row">`;
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  days.forEach(function displayDays(days) {
+    htmlForecast =
+      htmlForecast +
+      `<div class="col">
+                ${days} <br />
+                <img src="image(s)/Mon.png" alt="Cloudy weather" /> <br />
+                27°C
+        </div>`;
+  });
+
+  htmlForecast = htmlForecast + `</div>`;
+  forecastWeather.innerHTML = htmlForecast;
+}
+
+function getForecast(coordinates) {
+  //console.log(coordinates.lon);
+  //console.log(coordinates.lat);
+  let apiKey = `b98755d1364b40ce6f0dab6b8d71729b`;
+  let oneCallUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(oneCallUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   console.log(response.data);
 
@@ -79,6 +108,8 @@ function showTemperature(response) {
     ` https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
+  getForecast(response.data.coord);
+
   icon.setAttribute("alt", `${response.data.weather[0].main}`);
 }
 
@@ -86,18 +117,5 @@ let searchButton = document.querySelector("#search-form");
 searchButton.addEventListener("submit", searchCity);
 
 searchDefault("Durban");
-
-function handlePosition(position) {
-  console.log(position);
-  let lat = position.coords.latitude;
-  let long = position.coords.longitude;
-  console.log(`Your latitude is ${lat} and longitude is ${long}`);
-}
-navigator.geolocation.getCurrentPosition(handlePosition);
-
-function toggleLocation() {
-  let location = document.querySelector("#current-location");
-  location.addEventListener("submit", handlePosition);
-}
 
 let celsiusTemperature = null;
