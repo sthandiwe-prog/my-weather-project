@@ -19,7 +19,7 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 let time = document.querySelector("#time");
-time.innerHTML = `${day} ${hour}:${minutes}`;
+time.innerHTML = ` Last updated:  ${day} ${hour}:${minutes}`;
 
 function searchDefault(city) {
   let units = "metric";
@@ -52,35 +52,6 @@ function convertToCelsuis(event) {
 let celsiusDegrees = document.querySelector(".celsius");
 celsiusDegrees.addEventListener("click", convertToCelsuis);
 
-function displayForecast(response) {
-  //console.log(response.data);
-
-  let forecastWeather = document.querySelector("#forecast");
-
-  let htmlForecast = `<div class="row">`;
-
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  days.forEach(function displayDays(days) {
-    htmlForecast =
-      htmlForecast +
-      `<div class="col">
-                ${days} <br />
-                <img src="image(s)/Mon.png" alt="Cloudy weather" /> <br />
-                27°C
-        </div>`;
-  });
-
-  htmlForecast = htmlForecast + `</div>`;
-  forecastWeather.innerHTML = htmlForecast;
-}
-
-function getForecast(coordinates) {
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=b98755d1364b40ce6f0dab6b8d71729b`;
-  //console.log(apiUrl);
-  axios.get(apiUrl).then(displayForecast);
-}
-
 function showTemperature(response) {
   console.log(response.data);
 
@@ -107,8 +78,6 @@ function showTemperature(response) {
     "src",
     ` https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  getForecast(response.data.coord);
 
   icon.setAttribute("alt", `${response.data.weather[0].main}`);
 }
