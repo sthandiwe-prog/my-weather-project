@@ -75,3 +75,15 @@ strong {
 .celsius {
   color: black;
 }
+
+@media (max-width: 476px) {
+  .content {
+    max-width: 330px;
+    display: block;
+    margin: 0 auto;
+  }
+  .code-source {
+    display: block;
+    margin: 0 auto;
+  }
+}
